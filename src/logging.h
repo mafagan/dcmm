@@ -1,0 +1,62 @@
+#ifndef LOGGING_H
+#define LOGGING_H
+
+#include <log4c.h>
+#include <log4c/appender_type_stream.h>
+#include <log4c/appender_type_stream2.h>
+#include <log4c/appender_type_syslog.h>
+#include <log4c/appender_type_mmap.h>
+#include <log4c/appender_type_rollingfile.h>
+#include <log4c/rollingpolicy_type_sizewin.h>
+#include <log4c/layout_type_basic.h>
+#include <log4c/layout_type_dated.h>
+#include <log4c/layout_type_dated_local.h>
+#include <log4c/layout_type_basic_r.h>
+#include <log4c/layout_type_dated_r.h>
+#include <log4c/layout_type_dated_local_r.h>
+
+#define ERROR LOG4C_PRIORITY_ERROR
+#define WARN  LOG4C_PRIORITY_WARN
+#define DEBUG LOG4C_PRIORITY_DEBUG
+#define INFO  LOG4C_PRIORITY_INFO
+
+typedef struct {
+	char* hostname;
+	int   pid;
+} user_locinfo_t;
+
+#define log_error(a_format, args...) \
+  log4c_category_log(log4c_category_get("dcmm_log"), ERROR, a_format, ## args);
+
+#define log_warn(a_format, args...) \
+  log4c_category_log(log4c_category_get("dcmm_log"), WARN, a_format, ## args);
+
+#define log_debug(a_format, args...) \
+  log4c_category_log(log4c_category_get("dcmm_log"), DEBUG, a_format, ## args);
+
+#define log_info(a_format, args...) \
+  log4c_category_log(log4c_category_get("dcmm_log"), INFO, a_format, ## args);
+
+#define syslog_error(a_format, args...) \
+  log4c_category_log(log4c_category_get("dcmm_syslog"), ERROR, a_format, ## args);
+
+#define syslog_warn(a_format, args...) \
+  log4c_category_log(log4c_category_get("dcmm_syslog"), WARN, a_format, ## args);
+
+#define syslog_debug(a_format, args...) \
+  log4c_category_log(log4c_category_get("dcmm_syslog"), DEBUG, a_format, ## args);
+
+#define syslog_info(a_format, args...) \
+  log4c_category_log(log4c_category_get("dcmm_syslog"), INFO, a_format, ## args);
+
+int init_custom_appenders();
+int init_custom_layouts();
+int init_custom_rollingpolicy();
+extern int set_configuration(int nocleanup, int buf_size,
+	   int debug, int reread, log4c_rc_t *);
+int configuration_load(log4c_rc_t*);
+int log_init();
+int log_destroy();
+
+#endif
+

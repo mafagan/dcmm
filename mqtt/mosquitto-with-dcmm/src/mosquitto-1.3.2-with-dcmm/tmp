@@ -1,0 +1,57 @@
+set -e; for d in lib src; do make -C ${d}; done
+make[1]: Entering directory `/home/ubuntu/dev/mosquitto-with-dcmm/src/mosquitto-1.3.2-with-dcmm/lib'
+cc -Wall -ggdb -O2  -I. -I.. -I../lib -fPIC -DWITH_TLS -DWITH_TLS_PSK -DWITH_THREADING -c mosquitto_dcmm.c -o mosquitto_dcmm.o
+cc -Wall -ggdb -O2  -I. -I.. -I../lib -fPIC -DWITH_TLS -DWITH_TLS_PSK -DWITH_THREADING -c logging_mosq.c -o logging_mosq.o
+cc -Wall -ggdb -O2  -I. -I.. -I../lib -fPIC -DWITH_TLS -DWITH_TLS_PSK -DWITH_THREADING -c memory_mosq.c -o memory_mosq.o
+cc -Wall -ggdb -O2  -I. -I.. -I../lib -fPIC -DWITH_TLS -DWITH_TLS_PSK -DWITH_THREADING -c messages_mosq.c -o messages_mosq.o
+cc -Wall -ggdb -O2  -I. -I.. -I../lib -fPIC -DWITH_TLS -DWITH_TLS_PSK -DWITH_THREADING -c net_mosq.c -o net_mosq.o
+cc -Wall -ggdb -O2  -I. -I.. -I../lib -fPIC -DWITH_TLS -DWITH_TLS_PSK -DWITH_THREADING -c read_handle.c -o read_handle.o
+cc -Wall -ggdb -O2  -I. -I.. -I../lib -fPIC -DWITH_TLS -DWITH_TLS_PSK -DWITH_THREADING -c read_handle_client.c -o read_handle_client.o
+cc -Wall -ggdb -O2  -I. -I.. -I../lib -fPIC -DWITH_TLS -DWITH_TLS_PSK -DWITH_THREADING -c read_handle_shared.c -o read_handle_shared.o
+cc -Wall -ggdb -O2  -I. -I.. -I../lib -fPIC -DWITH_TLS -DWITH_TLS_PSK -DWITH_THREADING -c send_mosq.c -o send_mosq.o
+cc -Wall -ggdb -O2  -I. -I.. -I../lib -fPIC -DWITH_TLS -DWITH_TLS_PSK -DWITH_THREADING -c send_client_mosq.c -o send_client_mosq.o
+cc -Wall -ggdb -O2  -I. -I.. -I../lib -fPIC -DWITH_TLS -DWITH_TLS_PSK -DWITH_THREADING -c srv_mosq.c -o srv_mosq.o
+cc -Wall -ggdb -O2  -I. -I.. -I../lib -fPIC -DWITH_TLS -DWITH_TLS_PSK -DWITH_THREADING -c thread_mosq.c -o thread_mosq.o
+cc -Wall -ggdb -O2  -I. -I.. -I../lib -fPIC -DWITH_TLS -DWITH_TLS_PSK -DWITH_THREADING -c time_mosq.c -o time_mosq.o
+cc -Wall -ggdb -O2  -I. -I.. -I../lib -fPIC -DWITH_TLS -DWITH_TLS_PSK -DWITH_THREADING -c tls_mosq.c -o tls_mosq.o
+cc -Wall -ggdb -O2  -I. -I.. -I../lib -fPIC -DWITH_TLS -DWITH_TLS_PSK -DWITH_THREADING -c util_mosq.c -o util_mosq.o
+cc -Wall -ggdb -O2  -I. -I.. -I../lib -fPIC -DWITH_TLS -DWITH_TLS_PSK -DWITH_THREADING -c will_mosq.c -o will_mosq.o
+cc -shared  -Wl,--version-script=linker.version -Wl,-soname,libmosquittodcmm.so.1 mosquitto_dcmm.o logging_mosq.o memory_mosq.o messages_mosq.o net_mosq.o read_handle.o read_handle_client.o read_handle_shared.o send_mosq.o send_client_mosq.o srv_mosq.o thread_mosq.o time_mosq.o tls_mosq.o util_mosq.o will_mosq.o -o libmosquittodcmm.so.1  -lrt -lssl -lcrypto -lpthread ../../dcmm/lib/libdcmm.a
+ar cr libmosquittodcmm.a mosquitto_dcmm.o logging_mosq.o memory_mosq.o messages_mosq.o net_mosq.o read_handle.o read_handle_client.o read_handle_shared.o send_mosq.o send_client_mosq.o srv_mosq.o thread_mosq.o time_mosq.o tls_mosq.o util_mosq.o will_mosq.o
+make[1]: Leaving directory `/home/ubuntu/dev/mosquitto-with-dcmm/src/mosquitto-1.3.2-with-dcmm/lib'
+make[1]: Entering directory `/home/ubuntu/dev/mosquitto-with-dcmm/src/mosquitto-1.3.2-with-dcmm/src'
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c mosquitto.c -o mosquitto.o -DCHANGESET=\"$(cat ../changeset)\"
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c bridge.c -o bridge.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c conf.c -o conf.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c context.c -o context.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c database.c -o database.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c logging.c -o logging.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c loop.c -o loop.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c memory_mosq.c -o memory_mosq.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c persist.c -o persist.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c net.c -o net.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c net_mosq.c -o net_mosq.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c read_handle.c -o read_handle.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c read_handle_client.c -o read_handle_client.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c read_handle_server.c -o read_handle_server.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c read_handle_shared.c -o read_handle_shared.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c security.c -o security.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c security_default.c -o security_default.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c send_client_mosq.c -o send_client_mosq.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c send_mosq.c -o send_mosq.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c send_server.c -o send_server.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c service.c -o service.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c subs.c -o subs.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c sys_tree.c -o sys_tree.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c time_mosq.c -o time_mosq.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c tls_mosq.c -o tls_mosq.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c util_mosq.c -o util_mosq.o
+cc -I. -I..  -DVERSION="\"1.3.2\"" -DTIMESTAMP="\"2014-08-07 09:38:16+0800\"" -DWITH_BROKER -DWITH_TLS -DWITH_TLS_PSK -DWITH_BRIDGE -DWITH_PERSISTENCE -DWITH_MEMORY_TRACKING -DWITH_SYS_TREE -c will_mosq.c -o will_mosq.o
+cc mosquitto.o bridge.o conf.o context.o database.o logging.o loop.o memory_mosq.o persist.o net.o net_mosq.o read_handle.o read_handle_client.o read_handle_server.o read_handle_shared.o security.o security_default.o send_client_mosq.o send_mosq.o send_server.o service.o subs.o sys_tree.o time_mosq.o tls_mosq.o util_mosq.o will_mosq.o -o mosquitto  -ldl -lm -lrt -lssl -lcrypto
+cc -Wall -ggdb -O2  -c mosquitto_passwd.c -o mosquitto_passwd.o
+cc mosquitto_passwd.o -o mosquitto_passwd  -lcrypto
+make[1]: Leaving directory `/home/ubuntu/dev/mosquitto-with-dcmm/src/mosquitto-1.3.2-with-dcmm/src'
+set -e; for d in man; do make -C ${d}; done
+make[1]: Entering directory `/home/ubuntu/dev/mosquitto-with-dcmm/src/mosquitto-1.3.2-with-dcmm/man'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/ubuntu/dev/mosquitto-with-dcmm/src/mosquitto-1.3.2-with-dcmm/man'

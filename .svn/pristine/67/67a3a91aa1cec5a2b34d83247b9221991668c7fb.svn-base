@@ -1,0 +1,7 @@
+DCMM CONFIGURATION
+    
+    A web based interface to make configuration for dcmm.
+
+Installation:
+    Copy all these files into your apache root directory, and be sure that 
+    CGIEXEC module was enabled.

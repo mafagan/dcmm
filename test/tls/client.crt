@@ -1,0 +1,48 @@
+Certificate:
+    Data:
+        Version: 1 (0x0)
+        Serial Number: 2 (0x2)
+    Signature Algorithm: md5WithRSAEncryption
+        Issuer: C=cn, ST=sh, L=sh, O=intel, OU=ssg, CN=ca/emailAddress=ca@intel.com
+        Validity
+            Not Before: Jul 31 01:14:13 2014 GMT
+            Not After : Jul 31 01:14:13 2015 GMT
+        Subject: C=cn, ST=sh, L=sh, O=intel, OU=ssg, CN=client/emailAddress=client@intel.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (1024 bit)
+                Modulus:
+                    00:aa:82:e2:9f:1b:23:f5:ec:5d:bf:11:dc:d8:dd:
+                    d3:e1:05:4b:3b:d0:04:0f:23:d8:c9:46:f1:15:8b:
+                    cf:2c:44:ca:77:e9:94:fc:80:ef:91:14:d4:8f:1a:
+                    85:fa:0d:66:ac:70:63:e1:c6:30:3f:99:96:b7:1c:
+                    8c:43:93:7d:c2:cd:5f:8f:bc:c4:ff:33:11:3e:a2:
+                    ba:5c:01:b9:77:16:3d:1b:68:01:6c:a0:ba:6c:13:
+                    f8:6c:32:af:72:3e:5a:e1:91:4b:69:15:99:6a:d5:
+                    28:bc:e2:79:72:98:4a:a0:d0:09:af:13:1a:11:45:
+                    a1:a2:bf:8e:b2:e9:cd:e0:89
+                Exponent: 65537 (0x10001)
+    Signature Algorithm: md5WithRSAEncryption
+         25:0e:e4:95:81:07:fe:6c:3b:2d:70:63:e5:c5:b0:aa:39:8b:
+         2d:7b:c5:83:cb:f8:72:db:cf:84:6c:f5:7b:2b:13:7e:72:1d:
+         95:3c:ad:b8:a2:38:c3:e6:d8:e2:33:46:f1:60:5a:19:28:b7:
+         bf:a0:35:71:3e:1e:66:1d:f2:29:bc:70:a5:4b:f1:0a:8f:ff:
+         43:52:11:b6:db:79:30:b6:c7:08:8b:26:c4:f5:f5:2e:ce:da:
+         47:6b:f3:c1:56:c6:b4:2c:41:c4:32:9e:b1:19:61:01:c3:a8:
+         f4:a8:62:de:36:31:1a:8e:16:3e:2c:f7:61:20:a6:53:50:0f:
+         57:cb
+-----BEGIN CERTIFICATE-----
+MIICVTCCAb4CAQIwDQYJKoZIhvcNAQEEBQAwbzELMAkGA1UEBhMCY24xCzAJBgNV
+BAgMAnNoMQswCQYDVQQHDAJzaDEOMAwGA1UECgwFaW50ZWwxDDAKBgNVBAsMA3Nz
+ZzELMAkGA1UEAwwCY2ExGzAZBgkqhkiG9w0BCQEWDGNhQGludGVsLmNvbTAeFw0x
+NDA3MzEwMTE0MTNaFw0xNTA3MzEwMTE0MTNaMHcxCzAJBgNVBAYTAmNuMQswCQYD
+VQQIDAJzaDELMAkGA1UEBwwCc2gxDjAMBgNVBAoMBWludGVsMQwwCgYDVQQLDANz
+c2cxDzANBgNVBAMMBmNsaWVudDEfMB0GCSqGSIb3DQEJARYQY2xpZW50QGludGVs
+LmNvbTCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAqoLinxsj9exdvxHc2N3T
+4QVLO9AEDyPYyUbxFYvPLETKd+mU/IDvkRTUjxqF+g1mrHBj4cYwP5mWtxyMQ5N9
+ws1fj7zE/zMRPqK6XAG5dxY9G2gBbKC6bBP4bDKvcj5a4ZFLaRWZatUovOJ5cphK
+oNAJrxMaEUWhor+OsunN4IkCAwEAATANBgkqhkiG9w0BAQQFAAOBgQAlDuSVgQf+
+bDstcGPlxbCqOYste8WDy/hy28+EbPV7KxN+ch2VPK24ojjD5tjiM0bxYFoZKLe/
+oDVxPh5mHfIpvHClS/EKj/9DUhG223kwtscIiybE9fUuztpHa/PBVsa0LEHEMp6x
+GWEBw6j0qGLeNjEajhY+LPdhIKZTUA9Xyw==
+-----END CERTIFICATE-----

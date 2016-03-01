@@ -1,0 +1,45 @@
+Description of folders:
+    src:
+        1. dcmm:
+            the source code of `dcmm`
+        2. mosquitto-1.2.3-with-dcmm:
+            the source code of `mosquitto`, which use `dcmm` to send data
+        3. makefile:
+            used for compiling and installation
+
+    lib:
+        used for placing the api files after calling `make` in the `src` folder
+
+    example:    client's example codes, including:
+        1. simple_pub_example.c:
+            a simple example, which use `libmosquittodcmm.so` to publish to server
+        2. pub_client.c:
+            the original example of publish in `mosquitto-1.2.3`,
+            but using `libmosquittodcmm.so` instead of `libmosquitto.so`
+        3. sub_client.c:
+            the original example of subscribe in `mosquitto-1.2.3`,
+            but using `libmosquittodcmm.so` instead of `libmosquitto.so`
+        4. makefile:
+            used for compiling *.c in `example` folder
+        5. mosquitto_dcmm.h:
+            the api's header file, it's a copy of header file in lib/include
+
+Usage:
+    1. compile
+        make -C src    //after compiling, we will copy the
+                       //api files into the `lib` folder
+    2. installation
+        sudo make -C src install    //this operation will copy
+                                    //the `header` files into /usr/include,
+                                    //the `*.so` into /usr/lib/,
+                                    //`dcmm` and `mosquitto`(mqtt's server side
+                                    //program) into /usr/bin , u can use
+                                    //`make uninstall` to delete them
+    3. api usage for client
+        there're some examples in the `example` folder, if u want to know more
+        details of the api, u can read the function description in the
+        header files, `mosquitto_dcmm.h`, normally, they will place
+        at lib/include aftering compiling
+
+Thanks!
+
